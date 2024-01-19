@@ -1,3 +1,3 @@
-from .theme import PageFind
+from .theme import pagefind
 
-__all__ = ["PageFind"]
+__all__ = ["pagefind"]
