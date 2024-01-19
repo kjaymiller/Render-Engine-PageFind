@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "render-engine-pagefind"
+dynamic = ["version"]
+description = "PageFind theme and plugin that adds page find to your site."
+readme = "README.md"
+
+dependencies = [
+    'jinja2',
+    "render-engine>=2023.10.2b2"
+    ]
+
+[project.optional-dependencies]
+dev = [
+    "axe-playwright-python",
+    "black",
+    "playwright",
+    "pytest",
+    "pytest-mock",
+    "pytest-cov",
+    "pytest-playwright",
+    "ruff",
+    ]
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
+
+[project.urls]
+homepage = "https://github.com/kjaymiller/render_engine_pagefind"
+repository = "https://github.com/kjaymiller/render_engine_pagefind"
+documentation = "https://github.io/kjaymiller/render_engine_pagefind"
+
+[tool.semantic_release]
+version_toml = "pyproject.toml:project.version"
+branch = "main"
+
+[tool.ruff]
+select = ["E", "F", "I", "UP"]
+target-version = "py311"
+line-length = 120
+ignore-init-module-imports = true
+
+[tool.black]
+target-version =  ["py311"]
+line-length = 120
